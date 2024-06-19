@@ -4,8 +4,8 @@
 
 ### Links
 
-- Solution URL: ()
-- Live Site URL: ()
+- Solution URL: [Front-end Mentor](https://www.frontendmentor.io/solutions/app-chat-with-some-animation-DKW5X4_eGX)
+- Live Site URL: (https://aallam0.github.io/App-Chat)
 
 ### Author
 
