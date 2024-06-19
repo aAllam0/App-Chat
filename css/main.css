@@ -1,0 +1,311 @@
+:root {
+  --pale-violet: hsl(276, 100%, 81%);
+  --moderate-violet: hsl(276, 55%, 52%);
+  --desaturated-dark-violet: hsl(271, 15%, 43%);
+  --grayish-blue: hsl(206, 6%, 79%);
+  --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+  --dark-grayish-violet: hsl(270, 7%, 64%);
+
+  /* Linear gradient */
+  --light-magenta: hsl(293, 100%, 63%);
+  --light-violet: hsl(264, 100%, 61%);
+
+  --light-grayish-violet: hsl(270, 20%, 96%);
+  --very-light-magenta: hsl(289, 100%, 72%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  min-height: 100vh;
+  background-image: url(../images/);
+  position: relative;
+}
+*:focus {
+  outline: none;
+}
+/* End Rules */
+.left-bg,
+.right-bg {
+  position: absolute;
+  width: 30%;
+  height: 75vh;
+}
+.left-bg {
+  background-image: linear-gradient(var(--light-magenta), var(--light-violet));
+  border-radius: 0 0 1000px 1000px;
+  left: 0;
+  top: 0;
+}
+.right-bg {
+  border-radius: 1000px 1000px 0 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--light-grayish-violet);
+}
+@media (max-width: 767px) {
+  .left-bg,
+  .right-bg {
+    width: 50%;
+    height: 50vh;
+  }
+  .left-bg {
+    border-radius: 0 0 1000px 0;
+  }
+  .right-bg {
+    border-radius: 1000px 0 0 0;
+  }
+}
+/* End Background */
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 100px;
+  padding: 1rem;
+}
+.phone {
+  background-color: white;
+  padding: 15px;
+  border-radius: 30px;
+  width: 330px;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 10%);
+}
+.phone .app {
+  background-color: var(--light-grayish-violet);
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+}
+.phone .app .camera {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  top: -25px;
+  width: 60%;
+  height: 50px;
+  border-radius: 50px;
+}
+.phone .app .app-header {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to right, var(--light-violet), var(--light-magenta));
+  padding: 40px 15px 15px;
+  border-radius: 25px 25px 8px 8px;
+  color: white;
+}
+.phone .app .app-header i {
+  margin-right: 15px;
+}
+.phone .app .app-header .profile {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.phone .app .app-header .profile img {
+  max-width: 34px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.phone .app .app-header .profile .info h4 {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.phone .app .app-header .profile .info span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--pale-violet);
+} 
+.phone .app .app-header .three-dots-icon {
+  cursor: pointer;
+  min-width: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.phone .app .app-header .three-dots-icon span {
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: 3px;
+  border-radius: 50%;
+}
+.phone .app .chat {
+  padding: 10px;
+}
+.phone .app .chat .left,
+.phone .app .chat .right {
+  max-width: 230px;
+}
+.phone .app .chat .left-msg,
+.phone .app .chat .right-msg {
+  max-width: 200px;
+}
+.phone .app .chat .left-msg p,
+.phone .app .chat .right-msg p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.phone .app .chat .left {
+  transform: translateX(-250px);
+}
+.phone .app .chat .left .left-msg {
+  margin-bottom: 10px;
+}
+.phone .app .chat .left .left-msg p {
+  padding: 10px;
+  background-color: hsl(276deg 100% 81% / 20%);
+  color: var(--moderate-violet);
+  border-radius: 10px;
+}
+.phone .app .chat .left .walk-time {
+  display: flex;
+  align-items: center;
+  width: 230px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, var(--light-magenta), var(--light-violet));
+  color: white;
+}
+.phone .app .chat .left .left-msg + .walk-time {
+  margin-bottom: 10px;
+}
+.phone .app .chat .left .walk-time span {
+  display: block;
+}
+.phone .app .chat .left .walk-time .radio-input {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+.phone .app .chat .left .walk-time .radio-input + .circle-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  outline: 2px solid var(--very-light-magenta);
+  margin-right: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.phone .app .chat .left .walk-time .radio-input:checked + .circle-button {
+  background-color: var(--very-dark-desaturated-violet);
+}
+.phone .app .chat .left .walk-time .time {
+  color: var(--grayish-blue);
+  font-size: 0.9rem;
+  flex: 1;
+}
+.phone .app .chat .left .walk-time .price {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.phone .app .chat .right {
+  transform: translateX(250px);
+}
+.phone .app .chat .right,
+.phone .app .chat .right > div {
+  margin-left: auto;
+}
+.phone .app .chat .right .images {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+.phone .app .chat .right .images img {
+  max-width: 50px;
+  border-radius: 10px;
+}
+.phone .app .chat .right .right-msg {
+  margin-bottom: 10px;
+}
+.phone .app .chat .right .right-msg p {
+  width: fit-content;
+  margin-left: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 10%);
+  padding: 10px;
+  color: var(--desaturated-dark-violet);
+}
+.phone .app .chat .message-input {
+  position: relative;
+}
+.phone .app .chat .message-input input {
+  width: 100%;
+  display: block;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+.phone .app .chat .message-input button {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  right: 4px;
+  top: 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: var(--very-dark-desaturated-violet);
+  color: white;
+}
+.text {
+  max-width: 400px;
+  padding: 10px;
+}
+.text h1 {
+  color: var(--very-dark-desaturated-violet);
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+.text p {
+  color: var(--dark-grayish-violet);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+@media (max-width: 767px) {
+  main {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .text {
+    text-align: center;
+  }
+}
+.phone .app .chat .first {
+  animation: move-right 1s forwards;
+}
+.phone .app .chat .second {
+  animation: move-left 1s 1s forwards;
+}
+.phone .app .chat .third {
+  animation: move-right 1s 2s forwards;
+}
+@keyframes move-right {
+  from {
+    transform: translateX(-250px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes move-left {
+  from {
+    transform: translateX(250px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
